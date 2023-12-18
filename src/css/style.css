@@ -1,0 +1,42 @@
+.content {
+  cursor: url(../img/hummer128.png), auto;
+  background-color: rgb(119, 187, 187);
+}
+
+.action {
+  cursor: url(../img/hummerkick128.png), auto;
+}
+
+.status {
+  text-align: center;
+  font-size: 30px;
+  background-color: rgb(119, 187, 187);
+  
+}
+
+
+.hole-game {
+    margin: auto;
+    width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+
+  .hole {
+    width: 150px;
+    height: 150px;
+    margin: 30px 15px 30px;
+    background: rgb(25, 49, 39);
+    border-radius: 10%;
+  }
+  
+  .gobin_in_hole {
+    background-image: url(../img/goblin.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+  }
+  
