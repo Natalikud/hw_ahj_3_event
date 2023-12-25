@@ -1,5 +1,5 @@
 # GitHub Actons
-
+![CI](https://github.com/Natalikud/hw_ahj_3_event/actions/workflows/web.yml/badge.svg)
 
 
 
