@@ -3,6 +3,7 @@ export default class Game {
     this.class = _class;
     this.allElements = document.querySelectorAll(`.${this.class}`);
     this.elementId = 0;
+    this.gameEl = document.querySelector(".hole-game");
     this.dead = document.getElementById("dead");
     this.lost = document.getElementById("lost");
     this.getId = this.getId.bind(this);
@@ -17,18 +18,27 @@ export default class Game {
         this.elementId = newId;
         break;
       }
-      if (counter === 10) {
-        throw new Error("Something wrong! 10 matches!");
-      }
+      //if (counter === 10) {
+      //  throw new Error("Something wrong! 10 matches!");
+      //}
     }
     return this.elementId;
   }
 
-  changeHole() {
+  /* changeHole() {
     const id = this.getId();
-    if (document.querySelector(".gobin_in_hole")) {
-      document.querySelector(".gobin_in_hole").className = "hole";
+    if (document.querySelector('.gobin_in_hole')) {
+      document.querySelector('.gobin_in_hole').className = 'hole';
     }
+    this.allElements[id].className = 'hole gobin_in_hole';
+  } */
+
+  changeHole() {
+    if ((this.allElements[this.elementId].className = "hole gobin_in_hole")) {
+      this.allElements[this.elementId].className = "hole";
+    }
+
+    const id = this.getId();
     this.allElements[id].className = "hole gobin_in_hole";
   }
 
@@ -48,10 +58,9 @@ export default class Game {
     this.timer = setInterval(() => {
       this.changeHole();
     }, 1000);
-    document.querySelector(".hole-game").addEventListener("click", (e) => {
+    this.gameEl.addEventListener("click", (e) => {
       if (e.target.className === "hole gobin_in_hole") {
         this.dead.textContent = Number(this.dead.textContent) + 1;
-
       } else {
         this.lost.textContent = Number(this.lost.textContent) + 1;
       }
