@@ -61,6 +61,12 @@ export default class Game {
     this.gameEl.addEventListener("click", (e) => {
       if (e.target.className === "hole gobin_in_hole") {
         this.dead.textContent = Number(this.dead.textContent) + 1;
+
+        clearInterval(this.timer);
+        this.changeHole();
+        this.timer = setInterval(() => {
+          this.changeHole();
+        }, 1000);
       } else {
         this.lost.textContent = Number(this.lost.textContent) + 1;
       }
